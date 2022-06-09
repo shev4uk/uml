@@ -1,0 +1,8 @@
+@startuml Git Flow
+skinparam Style strictuml
+Untracked <- Unmodified : Delete file
+Unmodified -> Modified : Edit file
+Modified -> Staged : Staged file
+Unmodified <- Staged : Commit
+Untracked -> Staged : Add file
+@enduml

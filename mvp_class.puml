@@ -1,0 +1,25 @@
+@startuml
+skinparam style strictuml
+class Model {
+  +senderName
+  +recieverName
+  +emailTitle
+  +setSenderName()
+  +getSenderName()
+}
+class View {
+  +presenter
+  +registerWith()
+  +sendEmail()
+}
+class Presenter {
+  +view
+  +model
+  +setModel()
+  +getView()
+}
+Presenter <.. Model : "model changed"
+Model <.. Presenter : "update model"
+Presenter <.. View : "user interaction"
+View <.. Presenter : "data to display"
+@enduml
